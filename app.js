@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 const app = express();
-
+const PORT = process.env.PORT || 5000
 app.use(express.json())
 app.use(cors());
 
@@ -12,6 +12,6 @@ app.post("/", (req, res) => {
   res.send('ok')
 })
 
-app.listen(80, () => {
-  console.log("running on port 80");
+app.listen(PORT, () => {
+  console.log(`running on port ${PORT}`);
 })
